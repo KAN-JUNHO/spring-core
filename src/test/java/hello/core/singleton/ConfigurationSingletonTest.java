@@ -5,7 +5,7 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
-import hello.core.order.OrderSeviceImpl;
+import hello.core.order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -18,7 +18,7 @@ public class ConfigurationSingletonTest {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberServiceImpl memberService = ac.getBean(MemberServiceImpl.class);
-        OrderSeviceImpl orderSevice = ac.getBean(OrderSeviceImpl.class);
+        OrderServiceImpl orderSevice = ac.getBean(OrderServiceImpl.class);
         MemberRepository memberRepository = ac.getBean(MemberRepository.class);
 
         MemberRepository memberRepository1 = memberService.getMemberRepository();
